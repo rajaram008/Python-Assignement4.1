@@ -1,0 +1,17 @@
+## Assignment 4.1 - Task 2.1
+## How-to-count-distance-to-the-previous-zero. For each value, count the difference back to the previous zero (or the start of the Series,
+##whichever is closer) create a new column 'Y'. Consider a DataFrame df where there is an integer column 'X'
+
+df = pd.DataFrame({'X': [7, 2, 0, 3, 4, 2, 5, 0, 3, 4]})
+r = []
+j=0
+
+#Loop thru data frame
+for i, row in df.iterrows():
+    if row['X'] > 0:
+        j+=1
+    else:
+        j=0
+    r.append(j)     
+df['Y'] = r
+df
