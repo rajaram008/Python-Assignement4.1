@@ -25,6 +25,5 @@ avgCalenderMonth = df.groupby('month').mean()
 # create group on consecutive 4 months
 df['monthGrp'] = df['month'].apply(lambda x: np.floor((x/4)) - 1
                                    if x % 4 == 0 else np.floor((x/4)))
-print (df)
 df2 = df.loc[df.groupby('monthGrp')['numbers'].idxmax()]
 print(df2)
